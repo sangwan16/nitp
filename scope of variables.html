@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<title>
+	</title>
+<body>
+	<h1>Scope of variables in javascript.</h1>
+	<script>
+		var a = 20; //global declaration
+		console.log("Value of a outside the function: " + a);
+		function first(){
+			a = 10;
+			console.log("Value of a inside the function: " + a);
+			second();
+		}
+		first();
+		console.log("Value of a after change in function: "+ a);
+		function second(){
+			console.log("Value of a in this function is same as parent function: "+ a);
+		}
+
+	</script>
+</body>
+</html>
