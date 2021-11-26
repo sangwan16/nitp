@@ -3,14 +3,64 @@
 <head>
 </head>
 <title>
-	External js
+	Objects in Javascript.
 </title>
 <body>
-	<h1 draggable = "true" title = "12" align = "center">
-		Attaching external js to a html file.
-	</h1>
-	<script src = "jsFile.js"></script>
+	<style>
+		#person1 {
+			color: red;
+			font-size: 20px;
+			font-family: cursive;
+
+		}
+		#person2{
+			color: brown;
+			font-size: 20px;
+			font-family: cursive;
+		}
+		#person3{
+			color: green;
+			font-size: 20px;
+			font-family: cursive;
+		}
+	</style>
 	<script>
-		console.log("We have taken a = " + a);
+		function Person(firstName,lastName,adress){
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.address = adress;
+		};
+		
+		var person1 = new Person("Magnus","Carlsen","Tonsberg, Norway");
+		var person2 = new Person("Ian","Nepomniachtchi","Bryansk, Russia");
+		var person3 = new Person("Levon","Aronian","Armenia, Germany");
+		function func1(){
+			document.getElementById("person1").innerHTML = "Person1 name is " + person1.firstName + " " + person1.lastName + " living in " + person1.address + ".";
+			document.getElementById("image1").src = "magnus.jpg";
+		}
+		function func2(){
+		    document.getElementById("person2").innerHTML = "Person2 name is " + person2.firstName + " " + person2.lastName + " living in " + person2.address + ".";
+		    document.getElementById("image2").src = "ian.jpg";
+
+		}
+		function func3(){
+			document.getElementById("person3").innerHTML = "Person3 name is " + person3.firstName + " " + person3.lastName + " living in " + person3.address + ".";
+			document.getElementById("image3").src = "levon.jpg";
+
+		}
 	</script>
+	
+	<h1>Using objects in javaScript.</h1>
+	<p id = "person1" ></p>
+	<img id = "image1"/>
+	<p id = "person2" ></p>
+	<img id = "image2"/>
+	<p id = "person3" ></p>
+	<img id = "image3"/>
+	<br>
+
+	<button onclick = "func1()">Person1</button>
+	<button onclick = "func2()">Person2</button>
+	<button onclick = "func3()">Person3</button>
 	</body>
+	</html>
